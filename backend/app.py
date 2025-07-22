@@ -8,13 +8,18 @@ CORS(app)
 
 # Global variable to store selected DB type
 SELECTED_DB_TYPE = "mysql"  # default
-
+# git init
+# git add README.md
+# git commit -m "first commit"
+# git branch -M main
+# git remote add origin https://github.com/vashishtha07/sqlvalidator.git
+# git push -u origin main
 @app.route('/validate', methods=['POST'])
 def validate():
     try:
         data = request.get_json()
         sql = data.get('sql', '')
-
+        dialect = data.get('dialect', SELECTED_DB_TYPE.lower())
         # Always use the DB type selected in terminal
         db_type = SELECTED_DB_TYPE
 
