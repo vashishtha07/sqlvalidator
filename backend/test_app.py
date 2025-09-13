@@ -1,6 +1,6 @@
 import unittest
 import json
-from app import app
+from backend.main import app
 
 class SQLValidatorTestCase(unittest.TestCase):
     def setUp(self):

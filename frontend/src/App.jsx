@@ -51,7 +51,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        'http://127.0.0.1:5000/validate',
+        'https://sqlvalidator-backend-production.up.railway.app/validate',
         { sql: sqlToValidate, dialect: selectedDialect },
         { signal }
       );
