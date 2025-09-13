@@ -1,115 +1,204 @@
-/* General container */
+/*
+ * General Styles & Typography
+ * - Uses a modern, clean font stack.
+ * - Sets a dark-blue theme for a professional feel.
+ */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eef2ff;
+  /* Light, calming background */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/*
+ * App Container
+ * - A central card-like container for the application.
+ * - Adds a soft, elevated look with a subtle shadow.
+ */
 .app-container {
   max-width: 900px;
   margin: 2rem auto;
-  padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2.5rem;
   background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
 }
 
-/* Heading */
+/*
+ * Heading
+ * - A prominent, bold heading for the application title.
+ */
 h1 {
   color: #1e3a8a;
-  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  /* Bold heading */
 }
 
-/* Textarea */
+/*
+ * Controls Section
+ * - A simple, well-spaced section for the dialect dropdown.
+ */
+.controls {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.controls label {
+  font-weight: 600;
+  color: #475569;
+}
+
+.controls select {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+  font-size: 1rem;
+  color: #1e3a8a;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.controls select:hover {
+  border-color: #93c5fd;
+}
+
+.controls select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/*
+ * Textarea & Live Feedback
+ * - The core input area. The container helps manage the highlighting.
+ */
+.textarea-container {
+  position: relative;
+}
+
 textarea {
   width: 100%;
-  min-height: 200px;
+  min-height: 250px;
   font-size: 1rem;
   padding: 1rem;
-  border: 2px solid #1e3a8a;
-  border-radius: 8px;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
   resize: vertical;
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
   font-weight: 500;
-  /* Slightly bold text in textarea */
+  background-color: #f8fafc;
+  color: #1a202c;
+  font-family: 'Fira Code', 'Roboto Mono', monospace;
+  line-height: 1.6;
 }
 
 textarea:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
 }
 
-/* Result box */
-.result {
+/*
+ * Result Messages
+ * - A dedicated section for showing validation results.
+ */
+.result-messages {
   margin-top: 1.5rem;
-  text-align: left;
-  background: #f0f4ff;
-  color: #1e3a8a;
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #f0f4ff;
   border: 1px solid #c7d2fe;
-  overflow-x: auto;
-  font-family: monospace;
-  font-weight: 500;
-  /* Slightly bold monospace text */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.result p {
-  margin: 0.5rem 0;
-  font-weight: 600;
-  /* Bolder for messages */
-}
-
-.result ul {
-  padding-left: 1.2rem;
-  margin: 0.5rem 0;
-}
-
-.result li {
-  margin-bottom: 0.3rem;
-  color: #dc2626;
-  font-weight: 600;
-  /* Bolder errors */
-}
-
-/* Success + error text */
-.result .success {
-  color: #2563eb;
-  font-weight: 700;
-  /* Strong blue, bold */
-}
-
-.result .error {
-  color: #dc2626;
-  font-weight: 700;
-  /* Strong red, bold */
-}
-
-/* Button */
-button {
-  margin-top: 1rem;
-  padding: 0.6rem 1.5rem;
+.result-messages p,
+.result-messages ul {
+  margin: 0;
   font-size: 1rem;
-  border: none;
-  border-radius: 6px;
-  background-color: #2563eb;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s;
+}
+
+.status-message {
+  text-align: center;
+  color: #475569;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.success-message {
+  color: #10b981;
+  /* Green for success */
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.error-summary {
+  color: #ef4444;
+  /* Red for errors */
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.result-messages ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.result-messages li {
+  background-color: #fee2e2;
+  border-left: 5px solid #ef4444;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
   font-weight: 600;
-  /* Bold button text */
+  color: #b91c1c;
 }
 
-button:hover {
-  background-color: #1e40af;
+/*
+ * Visual Feedback for Textarea
+ * - Class to highlight the textarea border when it has errors.
+ */
+.has-error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.5) !important;
+}
+
+/*
+ * Line Number & Highlighting (requires JS implementation)
+ * - These classes are for highlighting individual lines within the textarea.
+ * - This requires a more complex frontend setup (e.g., using a library like CodeMirror or a custom component that renders lines individually).
+ * - The example below assumes a simpler approach where a separate element might be used to render line numbers.
+ */
+.line-numbers {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1rem 0.5rem;
+  text-align: right;
+  color: #94a3b8;
+  background-color: #f1f5f9;
+  border-right: 1px solid #e2e8f0;
+  border-radius: 12px 0 0 12px;
+  user-select: none;
 }
 
 .sql-error-highlight {
-  background-color: rgba(220, 38, 38, 0.2);
-  /* soft red background */
-  border-bottom: 2px solid #dc2626;
-  /* red underline */
-}
-
-.sql-error-highlight {
-  background-color: rgba(255, 0, 0, 0.3);
-  border-bottom: 2px solid red;
+  background-color: rgba(239, 68, 68, 0.15);
+  /* Soft red for highlighting */
+  border-left: 3px solid #ef4444;
 }
