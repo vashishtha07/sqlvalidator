@@ -95,11 +95,12 @@ def validate():
 
 if __name__ == '__main__':
     # Ask for DB type ONCE when starting the server
-    selected = input("Enter DB type (mysql/postgres/oracle) [default=mysql]: ").strip().lower()
-    if selected in ["mysql", "postgres", "oracle", "ansi"]:
-        SELECTED_DB_TYPE = selected
-    else:
-        SELECTED_DB_TYPE = "mysql"  # fallback
+    # selected = input("Enter DB type (mysql/postgres/oracle) [default=mysql]: ").strip().lower()
+    
+    # if selected in ["mysql", "postgres", "oracle", "ansi"]:
+    #     SELECTED_DB_TYPE = selected
+    # else:
+    #     SELECTED_DB_TYPE = "mysql"  # fallback
 
     print(f"✅ Using DB type: {SELECTED_DB_TYPE.upper()}")
     app.run(debug=True, port=5000)
